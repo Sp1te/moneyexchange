@@ -58,6 +58,7 @@ body{
     width: 80%;
     margin: auto;
 }
+
 .exchange-service{
     background: linear-gradient(156.96deg, #562EC2 29.59%, #A07EFE 73.59%);
     border-radius: 17px;
@@ -83,6 +84,7 @@ body{
     border-radius: 26px;
     justify-content: space-around;
     align-items: flex-end;
+    padding-bottom: 60px;
 }
 
 .calc-title{
@@ -438,6 +440,7 @@ input::-webkit-inner-spin-button {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-bottom: 20px;
     }
     .change-button{
         margin-top: 20px;
@@ -672,6 +675,7 @@ input::-webkit-inner-spin-button {
         padding: 0;
         justify-content: center;
         align-items: center;
+        margin-bottom: 40px;
     }
     .change-button{
         margin-left: 0;
