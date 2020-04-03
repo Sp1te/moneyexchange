@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/9d5bc9862e.js" crossorigin="anonymous"></script>
     <title>MoneyExChange</title>
 </head>
 <body>
     <header class="header">
         <div class="logo"><img src="img/logo.png" alt="logo"></div>
-        <nav class="menu">
-            <a href="" class="menu-item">Компания</a>
-            <a href="" class="menu-item">Блог</a>
-            <a href="" class="menu-item">Контакты</a>
+        <nav class="topnav" id="myTopNav">
+                <div class="menu">
+                    <a href="" class="menu-item">Компания</a>
+                    <a href="" class="menu-item">Блог</a>
+                    <a href="" class="menu-item">Контакты</a>
+                </div>
+                <div class="login">
+                    <button class="login-button">Вход</button>
+                    <button class="register-button">Регистрация</button>
+                </div>
         </nav>
-        <div class="login">
-            <button class="login-button">Вход</button>
-            <button class="register-button">Регистрация</button>
-        </div>
+        <a class="menu-icon" onclick="navSwitch()" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
     </header>
     <main>
         <div class="exchange-service">
             <h1 class="title">Мультивалютный<br> обменный сервис 24/7</h1>
-            <div class="container">
+            <div class="calculator-container">
                 <div class="calculator">
                     <div class="you-give">
                         <h4 class="calc-title">Вы отдаете</h4>
@@ -39,9 +44,9 @@
                                     <option value="">UAH</option>
                                 </select>
                             </div>
-                            <div class="change-icon"><img src="img/change-icon.png" alt=""></div>
                         </div>
                     </div>
+                    <div class="change-icon"><img src="img/change-icon.png" alt=""></div>
                     <div class="you-get">
                         <h4 class="calc-title">Вы получаете<span>c учетом комиссии ПС (0.5%)</span></h4>
                         <p class="summ-title">Сумма</p>
@@ -55,9 +60,9 @@
                                     <option value="">UAH</option>
                                 </select>
                             </div>
-                            <button class="change-button">Обменять</button>
                         </div>
                     </div>  
+                    <button class="change-button">Обменять</button>
                 </div>
             </div>
         </div>
@@ -84,24 +89,26 @@
             <!-- /.advantages -->
         </div>
         <!-- /.container -->
-        
-        <div class="exchange">
-            <div class="exchange-contant">
-                <div class="exchange-text">
-                    <h4 class="exchange-title">Сервис обмена электронных
-                        валют с 5-летней историей</h4>
-                    <p class="exchange-p">
-                        За время работы мы приобрели репутацию проверенного партнера и делаем все возможное, чтобы ваши впечатления от нашего сервиса были только благоприятными.
-                    </p>
+        <div class="exchange-container">
+            <div class="exchange">
+                <div class="exchange-contant">
+                    <div class="exchange-text">
+                        <h4 class="exchange-title">Сервис обмена электронных
+                            валют с 5-летней историей</h4>
+                        <p class="exchange-p">
+                            За время работы мы приобрели репутацию проверенного партнера и делаем все возможное, чтобы ваши впечатления от нашего сервиса были только благоприятными.
+                        </p>
+                    </div>
+                    <div class="exchange-image"><img src="img/exchange-service.png" alt="exchange-service"></div>
                 </div>
-                <div class="exchange-image"><img src="img/exchange-service.png" alt="exchange-service"></div>
             </div>
         </div>
+       
         
        <div class="container">
             <div class="valute-reserve">
                 <h3 class="reserve-title">Резерв валюты</h3>
-                <div class="valute-cards">
+                <div class="valute-cards" id="valuteCards">
                     <div class="valute-card">
                         <div class="valute-icon"><img src="img/yandex.png" alt="yandex"></div>
                         <div class="valute-text">
@@ -158,7 +165,9 @@
                             <p class="valute-price">99243.321</p>
                         </div>
                     </div>
+                    <button onclick="valuteSwitch()" class="valute-btn"><i class="fas fa-angle-double-down"></i></button>
                 </div>
+                
             </div>
             <!-- /.valute-reserve -->
             <div class="review">
@@ -168,15 +177,19 @@
                         <p class="review-text">
                             Киви переправил деньги не на кошелек а на номер мтс будьте внимательны.даже в этом случаи делают возврат и переводят на приват.особая благодарность оператору Марии.
                         </p>
-                        <span class="name">Jacob Robertson</span>
-                        <span class="date">20.02.2020, 12:10</span>
+                        <div class="name-date">
+                            <span class="name">Jacob Robertson</span>
+                            <span class="date">20.02.2020, 12:10</span>
+                        </div>
                     </div>
                     <div class="review-card">
                         <p class="review-text">
                             3-й раз выполняю обмен. все как всегда на отлично! транзакции выполняются в течение 15-20 мин. что очень быстро + лучший ценник!                       
                         </p>
-                        <span class="name">Morris Robertson</span>
-                        <span class="date">17.02.2020, 18:51</span>
+                        <div class="name-date">
+                            <span class="name">Morris Robertson</span>
+                            <span class="date">17.02.2020, 18:51</span>
+                        </div>
                     </div>
         
                 </div>
@@ -203,7 +216,7 @@
        <div class="container">
            <footer class="footer">
             
-                <div class="logo"><img src="img/logo.png" alt="logo"></div>
+                <div class="footer-logo"><img src="img/logo.png" alt="logo"></div>
                
                 <div class="footer-items">
                     <a href="" class="footer-item">Карта сайта</a>
@@ -212,9 +225,9 @@
                     <a href="" class="footer-item">Обмен</a>
                 </div>
                 <div class="social">
-                    <img src="img/vk.png" alt="vk" class="social-img">
-                    <img src="img/facebook.png" alt="facebook" class="social-img">
-                    <img src="img/instagram.png" alt="instagram" class="social-img">
+                  <a href="" class="social-img"><img src="img/vk.png" alt="vk"></a>
+                  <a href="" class="social-img"><img src="img/facebook.png" alt="facebook"></a>
+                  <a href="" class="social-img"><img src="img/instagram.png" alt="instagram"></a>
                 </div>
            </footer>
            <p class="footer-text">Сервис обмена электронных валют</p>
@@ -224,5 +237,6 @@
 
     
     </main>
+    <script src="js/main.js"></script>
 </body>
 </html>
